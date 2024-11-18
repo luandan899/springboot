@@ -1,0 +1,36 @@
+version: "3.9"
+
+services:
+  springboottutorial-service:
+    image: luandan/springboottutorial:v1
+    container_name: springboottutorial-service
+    networks:
+      - luandan-network
+    ports:
+      - "8080:8080"
+    environment:
+      POSTGRES_URL: jdbc:postgresql://postgres:5432/manager_expense
+      POSTGRES_USER: your_user
+      POSTGRES_PASSWORD: your_password
+    depends_on:
+      - postgres
+    restart: always
+
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    networks:
+      - luandan-network
+    environment:
+      POSTGRES_USER: your_user
+      POSTGRES_PASSWORD: your_password
+      POSTGRES_DB: manager_expense
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: always
+
+networks:
+  luandan-network:
+
+volumes:
+  postgres_data:

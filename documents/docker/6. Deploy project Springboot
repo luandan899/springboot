@@ -1,0 +1,29 @@
+1. tạo install ec2 và save key  file ".pem"
+
+2. install termius
+3. add key  file ".pem"
+4/ add host : host  ec2
+
+
+
+### Create network:
+`docker network create luandan-network`
+
+### Start PostGreSQL in network
+docker run --network luandan-network --name postgres -p 5432:5432 -e POSTGRES_USER=your_user -e POSTGRES_PASSWORD=your_password -d postgres:latest
+
+# Rum container
+docker run --name springboottutorial-service --network luandan-network -p 8080:8080 -e POSTGRES_URL=jdbc:postgresql://postgres:5432/manager_expense -e POSTGRES_USER=your_user -e POSTGRES_PASSWORD=your_password luandan/springboottutorial:v1
+
+
+
+
+
+
+truy cập vào postgre
+docker exec -it postgres psql -U your_user
+
+create Database -> CREATE DATABASE "manager-expense";
+
+Ctrl D: để thoát postgre
+

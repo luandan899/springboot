@@ -1,0 +1,61 @@
+.................................................................
+
+Tạo docker file
+.................................................................
+
+# Step 1: Build
+
+# Sử dụng image chính thức của Java 17,maven 3.8.7 làm base image
+# và đặt tên cho giai đoạn này là build
+# nên chọn   -> alpine cho nhẹ
+
+FROM maven:3.8.-openjdk-17 AS build
+
+
+#  chỉ định thư mục làm việc
+WORKDIR /app
+
+
+# Sao chép mã nguồn ứng dụng vào thư mục làm việc
+COPY . .
+
+# Cài đặt các phụ thuộc của ứng dụng và bỏ qua test
+RUN mvn clean install -DskipTests
+
+.................................................................
+# Step 2: Run
+
+FROM openjdk:17-jdk-slim
+
+
+#  chỉ định thư mục làm việc
+WORKDIR /run
+
+# copy file jar đã được build xong và đặt tên là userservice.jar
+COPY --from=build target/*.jar userservice.jar
+
+# xuất cổng 8080
+EXPOSE 8080
+
+# Chỉ định lệnh sẽ được thực thi khi container khởi động
+ENTRYPOINT ["java", "-jar", "userservice.jar"]
+
+ENTRYPOINT java  -jar  /run/userservice.jar
+
+
+
+
+build
+
+docker build -t name/version .
+ex: docker build -t userservice/v1 .
+
+check image: docker images
+
+
+run:
+docker run --name containerName -dp portRun:portExpose image:version
+ex: docker run --name userservice -dp 8888:8080 userservice:v1
+
+
+docker ps

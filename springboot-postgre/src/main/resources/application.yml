@@ -1,0 +1,24 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: user-service
+  profiles:
+    active: @spring.profiles.active@
+
+openapi:
+  service:
+    api-docs: user-service
+    server: http://localhost:${server.port}
+    title: API Service
+    description: API documents
+    version: 1.0.0
+
+
+
+packages:
+  scan: com.luandev.springbootpostgre.controller
+
+external:
+  cors:
+    fe-port: http://localhost:3000

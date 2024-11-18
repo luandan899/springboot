@@ -1,0 +1,18 @@
+spring:
+  config:
+    activate:
+      on-profile: test
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+openapi:
+  service:
+    api-docs: user-service
+    server: http://localhost:${server.port}
+    title: API Service
+    description: API documents
+    version: 1.0.0
+

@@ -1,0 +1,18 @@
+1. vào docker hub: https://hub.docker.com
+2. tạo repository : luandan/demo-test
+
+......................
+vào terminal
+clone iamge demo-test/v1: ->>> docker tag demo-test/v1 luandan/demo-test:v1
+
+check: docker images
+docker push containerName:Version
+luandan/demo-test trùng với tên repository
+
+
+vào docker hub check lại.
+
+
+
+
+

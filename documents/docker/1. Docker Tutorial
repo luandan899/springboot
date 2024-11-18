@@ -1,0 +1,61 @@
+.................................................................
+Docker là gì ?
+- Docker là một nền tảng mã nguồn mở.
+- Cho phép đóng gói ứng dụng và các phụ thuộc vào container.
+
+lợi ích:
+- Giúp ứng dụng có thể chạy một cách nhất quán trên nhiều môi trường khác nhau,
+- Docker container nhẹ hơn so với máy ảo
+- mở rộng và thu nhỏ linh hoạt
+
+.................................................................
+
+Container là gì ?
+- là một đơn vị tiêu chuẩn hóa để đóng gói phần mềm và các phụ thuộc để chạy ứng dụng.
+Mỗi container bao gồm: 3 phần source code, library, config.
+
+.................................................................
+
+Docker gồm 4 phần chính: Client, Daemon, Registry, Objects
+
++ Docker Client: cho phép người dùng tương tác với Docker daemon qua cách dòng lệnh:
+docker build,
+docker pull,
+docker run.
+
++ Docker Daemon: chịu trách nhiệm quản lý các container.
+
++ Docker Registry: là nơi lưu trữ các Docker image.
+Docker client có thể pull, push các image lên registry.
+
++ Docker Objects: Các đối tượng Docker bao gồm Docker images, containers, networks và volumes.
+Docker images: dùng để tạo container (read only).
+Docker containers: là các instance đang chạy của Docker images.
+Docker networks cho phép các container giao tiếp với nhau.
+Docker volumes cung cấp khả năng lưu trữ dữ liệu bền vững cho các container.
+
+
+.................................................................
+
+Docker Architecture
+1. có source code.
+2. viết docker file.
+3. build và đóng gói source code thành docker image.
+4. push docker image lên docker registry.
+5. muốn chạy thì pull image trong registry về vào chạy.
+
+
+
+.................................................................
+
+Các lệnh Docker cơ bản:
+docker --version
+docker pull <image_name>
+docker run <image_name>
+docker ps
+docker stop <container_id>
+docker start <container_id>
+docker rmi <image_name>
+
+
+

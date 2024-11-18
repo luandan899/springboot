@@ -1,0 +1,26 @@
+curl -s https://api.github.com/repos/goharbor/harbor/releases/latest | grep browser_download_url | cut -d '"' -f 4 | grep '.tgz$' | wget -i -
+
+
+# giải nén: tar xvzf harbor-offline-installer-v2.12.0.tgz
+
+cd harbot
+ls
+-> LICENSE  common.sh  harbor.v2.12.0.tar.gz  harbor.yml.tmpl  install.sh  prepare
+
+cp  harbor.yml.tmpl harbor.yml
+
+export DOMAIN="registry.luandan.dev"
+export EMAIL="luandan899@gmail.com"
+cerbot certonly --standalon -d $DOMAIN --preferred-challenges http --arge-tos -m $EMAIL  --keep-until-expriing
+certbot certonly --standalone -d $DOMAIN --preferred-challenges http --agree-tos -m $EMAIL --keep-until-expiring
+
+
+
+Chỉnh sửa cấu hình harbor.yml như hướng dẫn và chạy các lệnh
+
+# ./prepare
+# ./install.sh
+# docker-compose ps
+
+
+ls
