@@ -1,0 +1,28 @@
+server:
+  port: 8111
+
+spring:
+  application:
+    name: eccormerce-service
+  kafka:
+    consumer:
+      auto-offset-reset: earliest
+      heartbeat-interval: 100
+      group-id: eccormerce
+    template:
+      default-topic: root-topic
+
+    bootstrap-servers: localhost:9092
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/eccormerce
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+
