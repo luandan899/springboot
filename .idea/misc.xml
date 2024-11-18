@@ -5,7 +5,27 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/spring-boot-tutorial/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-postgre/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-mongodb/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-mongodb/libs/base-mongo/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-mongodb/libs/common/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-mongodb/libs/kafka/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-mongodb/applications/eccormerce/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-mongodb/applications/notificationservice/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-mongodb/applications/user/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-tutorial/applications/eccormerce/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-tutorial/applications/notificationservice/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-tutorial/applications/user/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-tutorial/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-tutorial/libs/base-mongo/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-tutorial/libs/common/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-tutorial/libs/kafka/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/springboot-tutorial/applications/notificationservice/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17" project-jdk-type="JavaSDK">
